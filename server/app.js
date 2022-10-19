@@ -17,6 +17,7 @@ app.get("/", async (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
+  console.log("err:", err);
   res.status(500).send("server error" + err.message);
 });
 module.exports = app;
