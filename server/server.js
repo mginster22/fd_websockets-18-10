@@ -1,12 +1,12 @@
 const http = require("http");
 const app = require("./app");
-const sockerServer = require("socket.io");
+const socketServer = require("socket.io");
 const PORT = process.env.PORT || 5000;
 const { SOCKET_EVENTS } = require("./configs");
 const { Message } = require("./models");
 
 const httpServer = http.createServer(app);
-const io = sockerServer(httpServer);
+const io = socketServer(httpServer);
 
 io.on("connection", (socket) => {
   console.log("connection to socket");

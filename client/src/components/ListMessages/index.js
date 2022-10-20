@@ -12,8 +12,11 @@ const ListMessages = () => {
 
   useEffect(() => {
     getMessageRequest();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    window.scroll(0, document.body);
+  }, [messages]);
   return (
     <section>
       {isFetching && <h3>Loading....</h3>}
